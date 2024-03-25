@@ -20,67 +20,73 @@ the application guarantees optimal display across diverse devices.
 With **Firebase** <img height=20px src="https://skillicons.dev/icons?i=firebase"> powering our **secure user authentication** mechanism, data confidentiality is maintained through **HTTP/S protocols**.
 Moreover, our robust backend comprises a blend of **Firebase database🔐 and MongoDB <img height=20px src="https://skillicons.dev/icons?i=mongodb">**, ensuring efficient data storage and management. Integration with the **<img height="30px" align="center" src="https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE-WEBSITE/assets/72359805/49484e34-14f1-46b9-9153-a25754eb797c"> API** facilitates secure transactions, providing users with a seamless shopping experience.
 
+<br>
 
 # Technologies Used 🏆
 [![My Skills](https://skillicons.dev/icons?i=js,react,html,css,bootstrap,mongodb,nodejs)](https://skillicons.dev)
 
 ### **MERN Stack:**
-- [x] MongoDB for efficient data storage.
-- [x] Express.js for robust server-side development.
-- [x] React.js for interactive and dynamic user interfaces.
-- [x] Node.js for scalable and efficient server-side execution.
-      
+- [x] **MongoDB:** Efficient and scalable NoSQL database, ensuring robust data storage and retrieval capabilities.
+- [x] **Express.js:** Fast and minimalist web framework for Node.js, facilitating the creation of powerful APIs and web applications.
+- [x] **React.js:** Dynamic and responsive JavaScript library for building modern and engaging user interfaces, utilizing:
+  - [ ] **useState:** React hook for managing state in functional components, enhancing component interactivity and reactivity. ⚛️
+  - [ ] **useContext:** React hook for accessing and consuming context values across components, facilitating efficient data sharing. 🔄
+  - [ ] **useReducer:** React hook for managing complex state logic with reducer functions, offering a more organized approach to state management. 🔴
+- [x] **Node.js:** Lightweight and efficient JavaScript runtime environment, enabling scalable and high-performance server-side execution.
+
 ### **Firebase:**
-- [x] Utilized for secure user authentication and real-time database functionalities.
+- [x] **Authentication:** Firebase authentication services for secure user authentication and authorization management.
+- [x] **Real-time Database:** Firebase real-time database for seamless and synchronized data updates across clients in real-time.
 
-### **HTTP/S protocols:**
-- [x] Axios
-- [x] AJAX
-- [x] Fetch API
+### **HTTP/S Protocols:**
+- [x] **Axios:** Promise-based HTTP client for making asynchronous requests to the server, enhancing data fetching and manipulation.
+- [x] **AJAX:** Asynchronous JavaScript and XML for making seamless requests to the server without refreshing the entire page.
+- [x] **Fetch API:** Modern browser API for fetching resources asynchronously across the network, improving data retrieval efficiency.
 
-### **PayPal API:**
-- [x] Integrated for secure and reliable payment processing.
+### **Payment Processing:**
+- [x] **PayPal API:** Integration of PayPal API for secure and reliable payment processing, ensuring seamless transactions for users.
 
-### **HTML, CSS, JavaScript:**
-- [x] Fundamentals of frontend development, ensuring a polished user experience.
+### **Frontend Development:**
+- [x] **HTML, CSS, JavaScript:** Foundational technologies for building the frontend interface, providing structure, style, and interactivity to web applications.
+- [x] **Bootstrap:** Frontend framework for developing responsive and mobile-first web projects, streamlining the design and layout process and ensuring compatibility across various devices. 🌐
 
-### **Responsive Design Principles:**
-- [x] Implemented to ensure seamless viewing experiences across various devices.
 
 <br>
 
 
-## Key Features 🎯
 
-- [x] **Home Page:**
+# Key Features 🎯
+
+- [x] 🏠 **Home Page:** 
   - Lists products to browse and explore.
 
-- [x] **Detailed Product View:**
+- [x] 🔍 **Detailed Product View:** 
   - Provides in-depth information about a selected product.
 
-- [x] **Product Categories:**
+- [x] 📂 **Product Categories:** 
   - Categorizes products for easy navigation.
 
-- [x] **Shopping Cart:**
+- [x] 🛒 **Shopping Cart:** 
   - Allows users to add and manage items in their cart.
 
-- [x] **Order Processing with PayPal:**
+- [x] 💳 **Order Processing with PayPal:** 
   - Securely handles payment processing using the PayPal API for demo purposes.
 
-- [x] **Secure User Registration and Login:**
+- [x] 🔐 **Secure User Registration and Login:** 
   - Ensures a safe and secure user authentication system.
 
-- [x] **Admin Functionalities:**
+- [x] 👩‍💼👨‍💼 **Admin Functionalities:** 
   - Manages 'Products' and 'Orders' lists
   - Features a dashboard displaying real-time metrics: registered users, order count, and financial performance through total money orders.
   - Enables the creation, editing, and deletion of products.
 
-- [x] **User Functionalities:**
+- [x] 👩‍💼 **User Functionalities:** 
   - Accesses order history.
   - Edits user profile.
 
-- [x] **About The Team Page:**
+- [x] 👩🏻‍🤝‍🧑🏻 **About The Team Page:** 
   - Provides information about the development team.
+
     
 <br>
 
@@ -142,13 +148,13 @@ project-name/
 ```
 
 
-## 💵 Paypal API <img align="center" height="60px" src="https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE-WEBSITE/assets/72359805/3a7ae41d-ece6-42db-bc19-b095f15a4d17"> -
+## 💵 Paypal API <img align="center" height="60px" src="https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE-WEBSITE/assets/72359805/1cf2f26b-937f-4eff-950d-a940409e14a9"> -
 
 ### Paypal Sandbox test accounts -
 ![paypalapi](https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE-WEBSITE/assets/72359805/c4790512-1e54-4b9f-a240-07d336ab2d6b)
 
 
-### 💲Demo Payment via <img height="40px" align="center" src="https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE-WEBSITE/assets/72359805/49484e34-14f1-46b9-9153-a25754eb797c"> -
+### 💲Demo Payment via <img height="50px" align="center" src="https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE-WEBSITE/assets/72359805/acfd6955-7866-467e-8e13-d168da6bfc00"> -
 
 To experience the payment process with PayPal, you can use our demo feature. Follow these steps to make a demo payment:
 
@@ -157,9 +163,9 @@ To experience the payment process with PayPal, you can use our demo feature. Fol
 3. **Initiate Payment**: Enter the demo payment section and select PayPal as the payment method.
 4. **Complete Payment**: Follow the instructions to proceed with the demo payment through PayPal.
 
-**Demo Credentials 💳:**
-- Username: `sb-gt6zp25024137@personal.example.com`
-- Password: `W=Flx8z1`
+### **Demo Credentials <img height="50px" align="center" src="https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE-WEBSITE/assets/72359805/04120fb3-c483-41dc-8710-f4cd74f11771">:**
+- [ ] Username: `sb-gt6zp25024137@personal.example.com`
+- [ ] Password: `W=Flx8z1`
 
 By following these steps, you can simulate a payment transaction using PayPal without the need to create a real order💰. This allows you to experience the payment process and familiarize yourself with its functionality.
 
