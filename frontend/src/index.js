@@ -9,17 +9,15 @@ import { StoreProvider } from './Store';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';   // for integrating PayPal scripts into the application.
 
 // - Entry point for rendering the React application.
-
-
-// creates a root entry point for a React concurrent mode.
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // Renders the main `App` component wrapped in `StoreProvider`, `HelmetProvider`, and `PayPalScriptProvider`.
-root.render(
-  // <React.StrictMode>
-  //This setup allows to manage the global state of tha app and share it efficiently across different parts of my React component tree.
+//This setup allows to manage the global state of tha app and share it efficiently across different parts of my React component tree.
 
-  // `StoreProvider` wraps the entire application, providing global state management through the React context.
+root.render(
+  //<React.StrictMode>
+
+  // `StoreProvider` wraps the entire application - providing global state management through the React context.
   // Context providers in React are used to pass down data to all the components in the tree without having to explicitly pass props at each level.
   // responsible for providing the application with a shared state (state) and a way to update that state (dispatch).
   <StoreProvider>
@@ -31,7 +29,7 @@ root.render(
       </PayPalScriptProvider>
     </HelmetProvider>
   </StoreProvider>
-  // </React.StrictMode>
+  //</React.StrictMode>
 );
 
 // for measuring performance in your app, pass a function, to log results (for example: reportWebVitals(console.log))

@@ -1,10 +1,8 @@
-//Order Model to create order in database
 import mongoose from 'mongoose';
 
-//orderItems is array of objects
-//paymentResult is object
+//Order Model to create order in database
 
-//first field is orderItems array, there we save the order information
+// order information is saved in orderItems array
 
 const orderSchema = new mongoose.Schema(
   {

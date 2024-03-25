@@ -6,8 +6,7 @@ import {
   Route,
   Routes,
 } from 'react-router-dom';
-
-// Import your application-specific components/screens
+// Import of specific components/screens
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import { Link } from 'react-router-dom';
@@ -27,8 +26,6 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import ProfileScreen from './screens/ProfileScreen';
-
-
 import { getError } from './utils';
 import axios from 'axios';
 import { Toast } from 'react-bootstrap';
@@ -41,23 +38,24 @@ import AdminRoute from './components/AdminRoute';
 import ProductListScreen from './screens/ProductListScreen';
 import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
-
 import AboutUs from './screens/AboutUsScreen';
 import HowToScreen from './screens/HowToScreen';
 
-// - This App component serves as the main structure for eCommerce web app, managing state, user authentication, navigation, and screen rendering based on routes.
+// This App component serves as the main structure for ECommerce web app, managing state, user authentication, navigation, and screen rendering based on routes.
 // Contains the structure of the application, including routing, navigation, and state management. 
 
 export default function App() {
-
-  // State Management:
+  
+  // *Store context* - used to manage global state and dispatch actions to update the state.
+  // The useContext hook is used to access the global state and dispatch function from the Store context.
+  // Destructuring state and dispatch from the Store context.
+  // The state object contains cart and userInfo properties, which are used to manage the cart and user information.
   const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { cart, userInfo } = state;   // Destructuring cart and userInfo from state
+  const { cart, userInfo } = state;  
 
 
-  // Signout handler by dispatching a 'USER_SIGNOUT' action and removing user-related data from local storage.
-  const signoutHandler = () => {
-    
+  // signoutHandler function is used to sign out the user by dispatching a 'USER_SIGNOUT' action and removing user-related data from local storage.
+  const signoutHandler = () => {    
     ctxDispatch ({ type: 'USER_SIGNOUT' });      // the type of action we going to dispatch
     localStorage.removeItem ('userInfo');        // remove user info from local storage
     localStorage.removeItem ('shippingAddress');
@@ -65,18 +63,14 @@ export default function App() {
     // window.location.href = '/signin';        // Optionally redirect to a sign-in page
   };
 
-
-  // States for managing the sidebar visibility and fetching product categories.
-  /* useState initializes a state variable 'sidebarIsOpen' with an initial value of 'false',
-  and setSidebarIsOpen is a function used to update the value of sidebarIsOpen.
-  The purpose of this state is to track whether the sidebar in the app is open or closed. */
+// useState initializes a state variable 'categories' with an initial value of an empty array,
+// The purpose of this state is to store the product categories fetched from the server.
+// and to track whether the sidebar in the app is open or closed.
   const [sidebarIsOpen, setSidebarIsOpen] = useState (false);
   const [categories, setCategories] = useState ([]);
 
-
-
-  /* Use Effect for Fetching Categories, fetches product categories when the component mounts.
-  // http://localhost:5000/api/products/categories give:
+// The useEffect hook is used to fetch product categories when the component mounts.
+ /* http://localhost:5000/api/products/categories give:
   [
     "HM",
     "Pants",
@@ -85,21 +79,22 @@ export default function App() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        // data is obtained through an asynchronous Axios request.
+        // The request is made to the '/api/products/categories' endpoint, which returns an array of product categories.
         const { data } = await axios.get (`/api/products/categories`);
         setCategories(data);
       } catch (err) {
         Toast.error(getError(err));
       }
     };
-
-    fetchCategories();
-
-  }, []);
+    fetchCategories();  // Call the fetchCategories function when the component mounts.
+  }, []); // The empty array as the second argument ensures that the effect runs only *once* when the component mounts.
 
 
 
-
+  // The component contains a header, sidebar, main section, and footer.
+  // The header includes navigation links, a search box, and conditional rendering based on user authentication and admin status.
+  // The sidebar displays product categories as links, based on whether it is open or closed.
+  // The main section handles routing using react-router-dom, defining routes for different screens such as Home, Product, Cart, About Us, etc.
   // The main component is wrapped in <BrowserRouter> for navigation handling.
   return (
     <BrowserRouter>
@@ -111,7 +106,6 @@ export default function App() {
         }
       >
         <ToastContainer position="bottom-center" limit={1} />
-
         {/* header includes navigation links, a search box, and conditional rendering based on user authentication and admin status. */}
         <header>
           <Navbar className="navbar-custom" variant="dark" expand="lg">
@@ -155,13 +149,11 @@ export default function App() {
                         {cart.cartItems.reduce ( (a, c) => a + c.quantity, 0 )}
                       </Badge>
                     )}
-                  </Link>
-                  
+                  </Link>                  
 
                   {/* Conditional rendering based on whether a user is authenticated. If yes, a NavDropdown with user-related links is displayed;
                   otherwise, "Sign In" link is shown. */}
                   {userInfo ? (
-
                     <NavDropdown title={userInfo.name} id="basic-nav-dropdown">
                       <LinkContainer to="/profile">
                         <NavDropdown.Item> User Profile </NavDropdown.Item>
@@ -188,7 +180,6 @@ export default function App() {
                     </Link>
                   )}
 
-
                   {/*****ADMIN*****/}
                   {/* if userInfo exist and userInfo.isAdmin is true -> we render a admin-related links navDropDown */}
                   {userInfo && userInfo.isAdmin && (
@@ -212,7 +203,6 @@ export default function App() {
             </Container>
           </Navbar>
         </header>
-
 
         {/* side bar - displays product categories as links, based on whether it is open or closed.. */}
         <div
@@ -242,14 +232,9 @@ export default function App() {
           </Nav>
         </div>
 
-
-
-
         {/* Main Section (Routing): 
-        The Routes component handles routing using react-router-dom, defining routes for different screens such as Home, Product, Cart, About Us, etc. */}
-        
+        The Routes component handles routing using react-router-dom, defining routes for different screens such as Home, Product, Cart, About Us, etc. */}   
         <main>
-
           <Container className="mt-3">
             <Routes>
               <Route path="/product/:slug" element={<ProductScreen />} />
@@ -259,7 +244,6 @@ export default function App() {
               <Route path="/search" element={<SearchScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
               <Route path="/signup" element={<SignupScreen />} />
-
               {/* <ProtectedRoute> is used for routes that need authentication*/}
               <Route
                 path="/profile"
@@ -269,7 +253,6 @@ export default function App() {
                   </ProtectedRoute>
                 }
               />
-
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
               <Route
                 path="/order/:id"
@@ -337,14 +320,8 @@ export default function App() {
               <Route path="/" element={<HomeScreen />} />
 
             </Routes>
-
-
           </Container>
         </main>
-
-
-
-
 
         <footer>
           <div className="text-center">All rights reserved</div>
@@ -353,26 +330,3 @@ export default function App() {
     </BrowserRouter>
   );
 }
-
-
-
-
-
-
-/*  <LinkContainer
-                  to={{ pathname: '/search', search: `category=${category}` }}
-                  onClick={() => setSidebarIsOpen(false)}
-                >
-                  <Nav.Link>{category}</Nav.Link>
-                </LinkContainer>
-
-change to:
-           <LinkContainer
-                  to={{
-                    pathname: "/search", search: `?category=${category}`,
-                  }}
-                  onClick={() => setSidebarIsOpen(false)}
-                >
-                  <Nav.Link>{category}</Nav.Link>
-              </LinkContainer>
-*/
