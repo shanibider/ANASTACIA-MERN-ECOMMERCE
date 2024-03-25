@@ -1,0 +1,21 @@
+{
+  "name": "react-final-project",
+  "version": "1.0.0",
+  "description": "```\r $ cd our-website\r $ cd backend\r $ npm i\r $ npm start\r ```",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd backend && npm install && cd ../frontend && npm install --force && npm run build",
+    "start": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shanibider/React-final-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shanibider/React-final-project/issues"
+  },
+  "homepage": "https://github.com/shanibider/React-final-project#readme"
+}

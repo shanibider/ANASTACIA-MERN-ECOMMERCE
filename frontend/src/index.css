@@ -1,0 +1,189 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.site-container {
+  min-height: 100vh;
+}
+.sign-in-button {
+  margin-top: 10px;
+}
+
+main {
+  flex: 1;
+}
+.btn-primary,
+.btn-outline-primary {
+  background-color: #14213d;
+  color: #e5e5e5;
+}
+
+.navbar-custom {
+  background-color: #14213d;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.rating span {
+  color: #457b9d;
+}
+
+.product {
+  border: 1px #edf2f4 solid;
+  margin: 1rem;
+}
+.product img {
+  width: 100%;
+  max-width: 400px;
+}
+.product-info {
+  padding: 1rem;
+}
+.img-large {
+  max-width: 100%;
+}
+.img-thumbnail {
+  height: 80px;
+}
+.small-container {
+  max-width: 600px;
+}
+
+.checkout-steps > div {
+  border-bottom: 0.2rem solid #a0a0a0;
+  color: #a0a0a0;
+}
+
+.checkout-steps > div.active {
+  border-bottom: 0.2rem solid #fadde1;
+  color: #ff758f;
+}
+
+/* sidebar */
+.navbar-brand {
+  font-weight: bold;
+}
+.side-navbar {
+  width: 240px;
+  height: 100%;
+  position: absolute;
+  left: -300px;
+  background-color: #000000;
+  transition: 0.5s;
+}
+
+.site-container {
+  transition: 0.4s;
+}
+.active-cont {
+  margin-left: 240px;
+}
+.active-nav {
+  left: 0;
+}
+.text-bold {
+  font-weight: bold;
+}
+
+/*Product List Screen*/
+.btn-edit {
+  background-color: #e5e5e5;
+  color: #23181a;
+  padding: 0.25rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+}
+.btn-delete {
+  background-color: #fadde1;
+  color: #23181a;
+  padding: 0.25rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+}
+.thead-products {
+  background-color: #14213d;
+  color: #f1faee;
+}
+.table {
+  margin-top: 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 20px #f1faee(0, 0, 0, 0.15);
+}
+.btn-create-product {
+  background-color: #f1faee;
+  color: #23181a;
+  padding: 0.25rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+}
+
+/*About US Screen*/
+.AboutUsContainer {
+  margin: 0.5rem;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 200;
+  color: #14213d;
+}
+.AboutUs {
+  margin: 0.5rem 0 2rem 0;
+  padding: 10px;
+  font-size: 17px;
+  font-weight: 200;
+  color: #14213d;
+}
+.teamList {
+  margin: 0.5rem 0 2rem 0;
+  padding: 10px;
+  font-size: 17px;
+  font-weight: 200;
+  color: #14213d;
+}
+.person {
+  margin: 1rem 0rem 1.5rem 0;
+  padding: 10px;
+  color: #14213d;
+}
+.role {
+  font-size: 19px;
+  font-weight: 400;
+  padding: 1rem 0 0.5rem 0;
+  color: #14213d;
+}
+.summery {
+  font-size: 18px;
+  font-weight: 400;
+  color: #14213d;
+}
+
+/*How To Screen*/
+.how-to {
+  margin: 1rem;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 200;
+  color: #14213d;
+}
+.title-how-to {
+  font-size: 40px;
+  font-weight: 600;
+  padding: 0 0 1rem 0;
+  color: #14213d;
+}
+.how-to-methods {
+  font-size: 18px;
+  font-weight: 400;
+  padding: 1.5rem 0 2rem 0;
+  color: #14213d;
+}
+.how-to-title {
+  padding: 1.5rem 0 0.5rem 0;
+  color: #14213d;
+}
