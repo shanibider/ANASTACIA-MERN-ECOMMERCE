@@ -15,31 +15,31 @@ import { useNavigate } from 'react-router-dom';
 
 // CartScreen mainly deals with updating the cart, removing items, and providing a clear interface for the user to see and manage their shopping cart.
 export default function CartScreen() {
-  // sets up a navigation function using the useNavigate hook from React Router. Helps the component navigate to different pages.
-  const navigate = useNavigate();
 
-  //we bring cartItems from useContext, then extract the current state, and the dispatcher (sender) from it
-  //from the state i got extract cartItems array, inside the cart. These are the items currently in the shopping cart.
+  const navigate = useNavigate();  // sets up a navigation function using the useNavigate hook from React Router. Helps the component navigate to different pages.
+
+  // useContext allows to use the context in a functional component.
+  // Store is the context that we want to use. It is the context that we created in Store.js.
+  // Store has two properties: state and dispatch. We are interested in the state and dispatch properties.
+  // state has all the data that we want to share across the application. dispatch is a function that we use to send actions to the reducer.
   const { state, dispatch: ctxDispatch } = useContext (Store);
   const { cart: { cartItems }, } = state;
 
-
-  // called when the user wants to change the quantity of items in the cart.
+  // updateCartHandler is an async function that takes two arguments: item and quantity.
+  // item is the product that the user wants to update, and quantity is the new quantity of the product.
   const updateCartHandler = async (item, quantity) => {
-    // send an axois request to the server, to check if the product is in stock.
+   // send an axois request to the server, to check if the product is in stock.
    // If the product is available, it dispatches an action (CART_ADD_ITEM) to update the cart with the new quantity.
-    const { data } = await axios.get(`/api/products/${item._id}`, { quantity });
+   const { data } = await axios.get(`/api/products/${item._id}`, { quantity });
     if (data.countInStock < quantity) {
       window.alert('Sorry. Product is out of stock');
       return;
     }
     ctxDispatch({
-      //for + button on cart
-      type: 'CART_ADD_ITEM',
+      type: 'CART_ADD_ITEM',      //for + button on cart
       payload: { ...item, quantity }, //item beacuse we want to keep the same item and just change the quantity
     });
   };
-
 
   // called when the user wants to remove an item from the cart.
   const removeItemHandler = (item) => {
@@ -47,36 +47,29 @@ export default function CartScreen() {
     ctxDispatch({ type: 'CART_REMOVE_ITEM', payload: item }); //implement in Store.js
   };
 
-
   // called when the user wants to proceed to checkout.
   const checkoutHandler = () => {
-    // go to the signin page, with a redirect to the shipping screen ( passing a redirect query string parameter to the URL).
+    // go to the signin page, with a redirect to the shipping screen (passing a redirect query string parameter to the URL).
     // If the user is already authenticated, they'll be redirected directly; otherwise, they'll be prompted to sign in.
     navigate('/signin?redirect=/shipping');     //after ? is the query string. "redirect=/shipping" is the query string
   };
-
-
 
   return (
     <div>
       <Helmet>        {/* renders a title */}
         <title>Shopping Cart</title>
       </Helmet>
-      <h1>Shopping Cart</h1>
-      
+      <h1>Shopping Cart</h1>      
       <Row>
       {/* sets the column size using the Bootstrap grid. Column should take up 8 out of 12 available grid columns on medium-sized screens. */}
         <Col md={8}>
-
           {/*if the cart is empty, show a message with a link to "/" to go shopping.
           if not, maps over the cartItems array and displays each item along with buttons to update the quantity, remove the item, and show the price. */}
           {cartItems.length === 0 ? (
             <MessageBox>
               Cart is empty. <Link to="/">Go Shopping</Link>
             </MessageBox>
-
           ) : (
-
             <ListGroup>
               {cartItems.map ( (item) => (
                 <ListGroup.Item key={item._id} className="my-3">
@@ -137,22 +130,17 @@ export default function CartScreen() {
 
                   </Row>  {/* end of one item */}
                 </ListGroup.Item>
-
               ))}       {/* end of map */}
             </ListGroup>
           )}
         </Col>
 
-
-
         {/*  displays a summary of the cart in a Card. Shows the subtotal (total quantity and price),
         and a button to proceed to checkout, which is disabled if the cart is empty. */}
         <Col md={4}>          {/* Column take up 4 out of 12 available grid columns on medium-sized screens. */}
           <Card>
-            <Card.Body>
-            
+            <Card.Body>            
               <ListGroup variant="flush"> {/* removes the default borders and rounded corners, giving cleaner look. */}
-
                 <ListGroup.Item>        
                   <h3>
                   {/* reduce applied to the cartItems array, calculate the total quantity of items in the cart. 
@@ -182,41 +170,19 @@ export default function CartScreen() {
 
 
               </ListGroup>
-
             </Card.Body>
           </Card>
-
         </Col> {/* end of the right col */}
-
-
       </Row>    {/* end of row from begining */}
-
     </div>
   );
 }
 
-
-
-
-
 /*
-Extra info and explanation:
-
-1. Context in React:
-   - Context in React is like a storage space where you can keep important information that many parts of your app might need.
-
-2. `useContext` Hook:
-   - `useContext` is a tool that helps a component grab information from this storage space (context).
-
-3. Global State and Dispatcher:
-   - The global state is like a big container holding all the important data for your app.
-   - The dispatcher is like a messenger that helps you send messages (actions) to change the data in that container.
-
-4. Using Context in `CartScreen`:
+Using Context in `CartScreen`:
    - The `CartScreen` component wants to know what's in the global state (like the shopping cart items) and wants the ability to change it.
-   - So, it uses `useContext` to grab this information and the ability to make changes.
+   - So it uses `useContext` to grab this information and the ability to make changes.
 
 By using context and `useContext`, `CartScreen` can easily get information from the big container (global state) and use the messenger (dispatcher) to make changes when needed.
 It's a convenient way to share and manage important data across different parts of the app.
-
 */

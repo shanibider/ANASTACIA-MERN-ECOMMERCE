@@ -8,7 +8,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { StoreProvider } from './Store';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';   // for integrating PayPal scripts into the application.
 
-// - Entry point for rendering the React application.
+// Entry point for rendering the React application.
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // Renders the main `App` component wrapped in `StoreProvider`, `HelmetProvider`, and `PayPalScriptProvider`.
