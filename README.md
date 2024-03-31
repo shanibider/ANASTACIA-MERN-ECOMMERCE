@@ -92,10 +92,16 @@ Moreover, our robust backend comprises a blend of **Firebase database🔐 and Mo
 
 
 
+# MERN Project Architecture 📁
+
+This repository contains the main files and folder structure for the MERN (MongoDB, Express.js, React.js, Node.js) project.
+The app follows a typical MERN architecture where React is used for the front-end, Node.js and Express for the back-end, MongoDB for the database, and JWT for authentication.
+These components work together to provide a seamless shopping experience for users while allowing for easy management of products, orders, and user accounts.
+
 ## Folder Structure 📁
 
 ```
-project-name/
+MERN-project/
 ├── frontend/
 │   ├── components/
 │   │   ├── AdminRoute.js
@@ -147,6 +153,110 @@ project-name/
 └── ...
 ```
 
+- [x] **backend**: Contains the backend files and resources, following a RESTful architecture.
+- [x] **frontend**: Houses the frontend files and components developed with React.js.
+- [x] **config**: Stores configuration files for the project, such as database configurations or environment variables.
+- [x] **models**: Defines the database models and schemas used in the application.
+- [x] **routes**: Contains the route definitions for the API endpoints.
+- [x] **controllers**: Includes the controller functions responsible for handling requests and responses.
+- [x] **middlewares**: Houses custom middleware functions used in the API.
+- [x] **utils**: Stores utility functions and helper modules used throughout the project.
+- [x] **public**: Stores any static assets or files served by the backend.
+- [x] **views**: Contains server-side views if any, typically used in server-side rendering applications.
+
+
+## Backend Structure 🧱🔨-
+
+### Server -
+
+- [ ] **`server.js`:** This is the main entry point for the Node.js backend. It initializes Express, connects to MongoDB using Mongoose, defines API routes, and serves the React frontend. It also includes logic for seeding initial data and serving static files.
+
+### Routes -
+
+- [ ] **`orderRoutes.js`,** `productRoutes.js`, `seedRoutes.js`, `userRoutes.js`: These files define the API endpoints and route handlers for managing orders, products, user authentication, and seeding initial data.
+
+### Models -
+
+- [ ] `Order.js`, `Product.js`, `User.js`: These files define the data models using Mongoose, which allow you to interact with MongoDB collections.
+
+### firebase.js -
+
+- [ ] **`firebase.js`:** This file sets up Firebase for authentication and database management in the application. It ensures that the Firebase app is properly configured and ready to use authentication and Firestore services.
+
+### utils.js -
+
+- [ ] **`utils.js`:** This file provides essential utility functions and middleware for user authentication and authorization in the application. It ensures that only authenticated users with the appropriate permissions can access certain routes or perform specific actions.
+
+
+
+## Frontend Structure 🖼 -
+
+### Components
+
+- [ ] **`AdminRoute.js`, `CheckoutSteps.js`, `LoadingBox.js`, `MessageBox.js`, `Product.js`, `ProtectedRoute.js`, `Rating.js`, `SearchBox.js`**.
+
+### Screens -
+
+- [ ] **`CartScreen.js`, `DashboardScreen.js`, `HomeScreen.js`, `HowToScreen.js`, `OrderHistoryScreen.js`, `OrderListScreen.js`, `OrderScreen.js`, `PaymentMethodScreen.js`, `PlaceOrderScreen.js`, `ProductEditScreen.js`, `ProductListScreen.js`, `ProductScreen.js`, `ProfileScreen.js`, `SearchScreen.js`, `ShippingAddressScreen.js`, `SigninScreen.js`, `SignupScreen.js`, `AboutUsScreen.js`**.
+
+### app.js -
+
+- `App.js`: This file is the entry point for your React frontend application- controls the frontend structure and behavior. It defines routes using `react-router-dom` for different pages/screens of the application and orchestrates the structure and behavior of your frontend application.
+
+### store.js
+
+- [ ] **`store.js`:** This file defines and manages the application's global state management using React context and reducers. It essentially manages the global state of the application, handling user authentication, cart management, and related operations.
+
+### index.js
+
+- [ ] **`index.js`:** This file serves as the entry point for the React application. It wraps the `<App />` component with providers such as `StoreProvider`, `HelmetProvider`, and `PayPalScriptProvider`.
+
+Here's an example of how HelmetProvider and react-helmet might be use in the app:
+```
+// Import necessary dependencies
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
+// Wrap your entire application with HelmetProvider in index.js
+ReactDOM.render(
+  <HelmetProvider>
+    <App />
+  </HelmetProvider>,
+  document.getElementById('root')
+);
+
+// In any component where you want to dynamically change document head elements, use Helmet component
+const MyComponent = () => {
+  return (
+    <div>
+      {/* Use Helmet component to set document title */}
+      <Helmet>
+        <title>My Page Title</title>
+        {/* Add other head elements like meta tags */}
+        <meta name="description" content="This is my page description" />
+      </Helmet>
+      {/* Your component JSX */}
+      <h1>Hello, World!</h1>
+    </div>
+  );
+};
+```
+
+ 
+## Components vs Screens 🥇 -
+
+### 🗂 Components -
+
+Components are reusable building blocks that encapsulate a piece of UI functionality. They promote code reusability and maintainability by allowing you to create modular pieces of code that can be used across different parts of your application.
+
+### 📁 Screens -
+
+Screens are typically higher-level components that represent entire pages or views within your application. They often contain multiple components and handle more complex logic related to rendering and managing UI state.
+
+
+
+
+
+<br>
 
 ## 💵 Paypal API <img align="center" height="60px" src="https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE-WEBSITE/assets/72359805/1cf2f26b-937f-4eff-950d-a940409e14a9"> -
 
@@ -171,6 +281,7 @@ By following these steps, you can simulate a payment transaction using PayPal wi
 
 
 <br>
+
 
 ## The application follows these key patterns 🏆 -
 THe architecture focuses on structured state management, components, and effective handling of side effects and navigation in a React app.
