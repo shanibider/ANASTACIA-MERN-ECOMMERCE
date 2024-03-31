@@ -17,11 +17,15 @@ dotenv.config();
 
 const app = express();
 
+
+// Database Connection:
+// Connect to a MongoDB Atlas cluster, a cloud-based MongoDB service provided by MongoDB.
+// Commonly used in production environments for its scalability, reliability, and managed features.
+// Syntax of: MONGODB_URI = "mongodb+srv://<username>:<password>@<clusterName>.mongodb.net/?retryWrites=true&w=majority";
 mongoose
   .connect(process.env.MONGODB_URI)
   .then ( () => {
     console.log('connected to db');
-
     // Data Scraping - Read data from 'cloths.json' and inserts it into 'products' collection in MongoDB
     // Use fs.readFile to read the JSON data, parse it, and insert each product into the collection.
     fs.readFile('cloths.json', (err, data) => {
