@@ -1,26 +1,212 @@
-# Comprehensive MERN E-commerce React Website 👜
-<div align="center"><img height="350px" src="https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE-WEBSITE/assets/72359805/9717a097-24f9-4175-af71-1b3ebac20dc3"></div>
+#  MERN E-commerce React Shopping Website 👜🛍️
+
+[![React](https://img.shields.io/badge/React-★★★★★-blue)](https://react.dev/)
+[![node](https://img.shields.io/badge/node-★★★★★-yellow)]()
+[![express](https://img.shields.io/badge/Express-★★★★★-green)]()
+[![mongoDB](https://img.shields.io/badge/mongoDB-★★★★★-pink)]()
+[![Firebase](https://img.shields.io/badge/Firebase-★★★★★-brown)]()
+[![Javascript](https://img.shields.io/badge/JavaScript-★★★★★-orange)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+<div align="center"><img width=auto height="150px" src="https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE/assets/72359805/f7ca753d-2874-48c9-a7a2-f3fe8fc25811"></div>
+
+#### **Live Demo:** [Explore the live website. 🖥](https://anastacia-mern-ecommerce-website.onrender.com/)
+
+A comprehensive feature-rich e-commerce website developed as a server-client React application, powered by the **MERN (MongoDB, Express.js, React.js, Node.js) stack**. 
+<img height=20px src="https://skillicons.dev/icons?i=react">
+<img height=20px src="https://skillicons.dev/icons?i=nodejs">
+<img height=20px src="https://skillicons.dev/icons?i=express">
+<img height=20px src="https://skillicons.dev/icons?i=mongodb">
+<img height=20px src="https://skillicons.dev/icons?i=firebase">
+<img height=20px src="https://skillicons.dev/icons?i=js">
+This project showcases proficiency in full-stack development, including frontend UI/UX design, backend API development, database management, and integration with external services. <br>
+
+> Please try to experience full purchase on the website:) Register, choose products, pay with this demo PayPal user, and review your order. <br> Demo PayPal User: <br>
+◽ Username: sb-gt6zp25024137@personal.example.com <br>
+◽ Password: W=Flx8z1
+
+### 🛒 Key Features:
+- **dynamic shopping cart**
+- 🖊 **Interactive review system**
+- 🗂️ **Organized product listings**
+- 💳**Paypal payment process**
+- 🔒 **User authentication and authorization**
+- 🛠️ **User functionalities**, such as order history, and **admin functionalities** such as real-time metrics (registered users, order count, total money orders), creation, editing, and deletion of products.
+<br>
 
 
-#### **Live Demo:** [Explore the live website.🖥](https://anastacia-mern-ecommerce-website.onrender.com/)
+## 🌟 Frontend Implementation 
+The frontend is built using **React.js**, using React features such as hooks (`useState`, `useEffect`), and state management using **Redux**. It includes components and routing to create an interactive user experience.
 
-A comprehensive feature-rich e-commerce website developed as a server-client React application, powered by the: 
-<h2 align="center"> MERN (MongoDB, Express.js, React.js, Node.js) <img height=30px src="https://skillicons.dev/icons?i=mongodb"> <img height=30px src="https://skillicons.dev/icons?i=express"> <img height=30px src="https://skillicons.dev/icons?i=react">
-<img height=30px src="https://skillicons.dev/icons?i=nodejs"> stack 💼 </h2>
-🛒 Key features include a dynamic shopping cart, an interactive review system🖊, and organized product listings📋, enhancing user engagement. Administrators benefit from comprehensive control over user interactions, and streamlining platform management.
+### Key React features:
+1. **React Components**: Utilizes functional components and hooks to manage state and side effects, promoting code reusability and simplification.
+2. **Redux State Management**: Manages the global state of the application, including user authentication, product listing, and shopping cart state. Redux Thunk is used for asynchronous operations.
+3. **Routing with React Router**: Implements dynamic routing for different parts of the application, including product pages, user login, and the shopping cart.
+4. **State Management with useState and useEffect**: Manages local component state and side effects, ensuring components respond to changes in application state efficiently.
+5. **Asynchronous Operations with Redux Thunk**: Handles asynchronous logic such as fetching data from the backend.
 
-<br> 
 
-# Integration between Frontend and Backend 🏆
-This project demonstrates proficiency in full-stack development, including frontend UI/UX design, backend API development, database management, and integration with external services. It showcases the ability to work with a diverse set of technologies and libraries to build a scalable and robust web application.
-My server-client React application leverages a comprehensive stack of **JavaScript, HTML, and CSS technologies** <img height=20px src="https://skillicons.dev/icons?i=js">  <img height=20px src="https://skillicons.dev/icons?i=html">  <img height=20px src="https://skillicons.dev/icons?i=css"> 
-<br> to deliver a seamless user experience. Following established React application structures, including **routing, state management, and component-based architecture**, ensures scalability and maintainability. Emphasizing **responsive design**,
-the application guarantees optimal display across diverse devices.
+## Backend Implementation 🧱
+The backend of this e-commerce website is built using **Node.js** and **Express.js**, connecting to **MongoDB Atlas** for database management. It includes secure user authentication with **Firebase** and implements API endpoints to handle various functionalities such as product management, user management, and order processing.
 
-With **Firebase** <img height=20px src="https://skillicons.dev/icons?i=firebase"> powering our **secure user authentication** mechanism, data confidentiality is maintained through **HTTP/S protocols**.
-Moreover, our robust backend comprises a blend of **Firebase database🔐 and MongoDB <img height=20px src="https://skillicons.dev/icons?i=mongodb">**, ensuring efficient data storage and management. Integration with the **<img height="30px" align="center" src="https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE-WEBSITE/assets/72359805/49484e34-14f1-46b9-9153-a25754eb797c"> API** facilitates secure transactions, providing users with a seamless shopping experience.
+### Key Components of the Backend:
+1. **Database Management with MongoDB Atlas**: 🌐
+   `MongoDB Atlas` is a cloud-based NoSQL database used to manage the application's data efficiently. The database is designed to handle collections for `products, and orders`.
+
+   - **Orders Collection**: Stores order details including items, shipping address, payment method, and user information.
+   - **Products Collection**: Contains product information such as name, category, price, stock status, and reviews.
+
+   **Example Order Document (MongoDB)**
+   ```json
+   {
+     "_id": {"$oid": "666020f1c3dfea5c9ceef0e5"},
+     "orderItems": [
+       {
+         "slug": "adidas-fit-pant",
+         "name": "Adidas Fit Pant",
+         "quantity": {"$numberInt": "1"},
+         "image": "/images/p4.jpg",
+         "price": {"$numberInt": "65"},
+         "product": {"$oid": "63e3a5730d4c13163688a505"},
+         "_id": {"$oid": "63e3a5730d4c13163688a505"}
+       }
+     ],
+     "shippingAddress": {
+       "fullName": "Shani Bider",
+       "address": "Hapardes Harishon 1",
+       "city": "Rishon LeZion",
+       "postalCode": "7520901",
+       "country": "Israel"
+     },
+     "paymentMethod": "PayPal",
+     "itemsPrice": {"$numberInt": "65"},
+     "shippingPrice": {"$numberInt": "10"},
+     "taxPrice": {"$numberDouble": "9.75"},
+     "totalPrice": {"$numberDouble": "84.75"},
+     "user": {"$oid": "63e3a5730d4c13163688a508"},
+     "isPaid": false,
+     "isDelivered": false,
+     "createdAt": {"$date": {"$numberLong": "1675865100712"}},
+     "updatedAt": {"$date": {"$numberLong": "1675865100712"}},
+     "__v": {"$numberInt": "0"}
+   }
+   ```
+
+   **Example Product Document (MongoDB)**
+```json
+   {
+     "_id": {"$oid": "66602124c3dfea5c9ceef0e6"},
+     "name": "Gray T-shirt",
+     "slug": "T-shirt",
+     "image": "/images/i1.jpg",
+     "brand": "H&M",
+     "category": "Shirts",
+     "description": "High-quality T-shirt made from organic cotton.",
+     "price": {"$numberInt": "20"},
+     "countInStock": {"$numberInt": "50"},
+     "rating": {"$numberDouble": "4.5"},
+     "numReviews": {"$numberInt": "12"}
+   }
+
+```
 
 <br>
+
+![mongodb](https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE/assets/72359805/6e7a4d25-359f-4a7d-9fc6-142608eb803c)
+<br>
+
+
+2. **Express.js for API Development**: 🚀
+   `Express.js` is used to create a RESTful API to handle `HTTP requests` and responses, ensuring efficient communication between the frontend and the backend. The API endpoints are designed to perform CRUD operations on user, product, and order data.
+
+**Example API Route (orderRoutes.js)**
+```javascript
+orderRouter.get(
+  '/',
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+    const orders = await Order.find().populate('user', 'name');
+    res.send(orders);
+  })
+);
+
+orderRouter.post(
+  '/',
+  isAuth,
+  expressAsyncHandler(async (req, res) => {
+    //create an order 
+    const newOrder = new Order({
+      //for each order item we need to get the product id (for OrderModel). By map function we convert _id to product
+      orderItems: req.body.orderItems.map ( (x) => ({ ...x, product: x._id })),
+      shippingAddress: req.body.shippingAddress,
+      paymentMethod: req.body.paymentMethod,
+      itemsPrice: req.body.itemsPrice,
+      shippingPrice: req.body.shippingPrice,
+      taxPrice: req.body.taxPrice,
+      totalPrice: req.body.totalPrice,
+      user: req.user._id, //in the end of isAuth we have req.user
+    });
+    //save the order in db
+    const order = await newOrder.save();
+    res.status(201).send({ message: 'New Order Created', order });
+  })
+);
+```
+
+3. **User Authentication with Firebase**: 🔐
+   `Firebase` Authentication is integrated to manage user `sign-up, login, and secure sessions`.
+
+**Example Firebase Authentication (auth.js)**
+```javascript
+  import { initializeApp } from "firebase/app";
+  import { getAuth } from 'firebase/auth';
+  import { getFirestore } from '@firebase/firestore';
+
+    const firebaseConfig = {
+    apiKey: "AIzaSyDzdc6B_R5qfZ0sxsphZVYsx3wbIzqBJwQ",
+    authDomain: "fir-final-project-9a40c.firebaseapp.com",
+    databaseURL: "https://fir-final-project-9a40c-default-rtdb.firebaseio.com",
+    projectId: "fir-final-project-9a40c",
+    storageBucket: "fir-final-project-9a40c.appspot.com",
+    messagingSenderId: "980757971098",
+    appId: "1:980757971098:web:0da87ecab4ab961d98df23"
+  };
+  export const app = initializeApp(firebaseConfig);
+  export const auth = getAuth(app);
+  export const db = getFirestore(app);
+```
+
+<br>
+
+![firebase](https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE/assets/72359805/230b5448-2181-4406-ad86-a6ea80d71d6c)
+<br>
+
+4. **Hosting on Render**: ☁️
+   The website is hosted on **Render**, including connection to environment variables such as JWT_SECRET and MONGODB_URI. Render offers a deployment process, automatic SSL, and global CDN, ensuring high availability and performance.
+<br>
+
+![mern-render](https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE/assets/72359805/e3cf22eb-b31f-453e-92f1-ef8a10a68b9c)
+
+<br>
+
+5. **Paypal API** <img align="center" height="40px" src="https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE-WEBSITE/assets/72359805/1cf2f26b-937f-4eff-950d-a940409e14a9"> -
+Using Demo Payment via <img height="20px" align="center" src="https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE-WEBSITE/assets/72359805/acfd6955-7866-467e-8e13-d168da6bfc00">. To experience the payment process with PayPal, you can use the demo feature. Follow these steps to make a demo payment💰:
+  - [x] **Visit the Demo Payment Page**: Navigate to the payment page.
+  - [x] **Login with Demo Credentials**: Use the provided demo username and password to access the demo environment.
+  - [x] **Initiate Payment**: Enter the demo payment section and select PayPal as the payment method.
+  - [x] **Complete Payment**: Follow the instructions to proceed with the demo payment through PayPal.
+
+##### **Demo Credentials <img height="50px" align="center" src="https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE-WEBSITE/assets/72359805/04120fb3-c483-41dc-8710-f4cd74f11771">:**
+- [ ] Username: `sb-gt6zp25024137@personal.example.com`
+- [ ] Password: `W=Flx8z1`
+
+#### Paypal Sandbox test accounts -
+![paypal demo](https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE/assets/72359805/3f5b4240-98c0-405f-8a4d-8967cbd2bbea)
+
+<br>
+ 
+   
+---
 
 # Technologies Used 🏆
 [![My Skills](https://skillicons.dev/icons?i=js,react,html,css,bootstrap,mongodb,nodejs)](https://skillicons.dev)
@@ -49,14 +235,11 @@ Moreover, our robust backend comprises a blend of **Firebase database🔐 and Mo
 ### **Frontend Development:**
 - [x] **HTML, CSS, JavaScript:** Foundational technologies for building the frontend interface, providing structure, style, and interactivity to web applications.
 - [x] **Bootstrap:** Frontend framework for developing responsive and mobile-first web projects, streamlining the design and layout process and ensuring compatibility across various devices. 🌐
-
-
 <br>
 
 
 
 # Key Features 🎯
-
 - [x] 🏠 **Home Page:** 
   - Lists products to browse and explore.
 
@@ -85,9 +268,7 @@ Moreover, our robust backend comprises a blend of **Firebase database🔐 and Mo
   - Edits user profile.
 
 - [x] 👩🏻‍🤝‍🧑🏻 **About The Team Page:** 
-  - Provides information about the development team.
-
-    
+  - Provides information about the development team.   
 <br>
 
 
@@ -252,32 +433,6 @@ Components are reusable building blocks that encapsulate a piece of UI functiona
 
 Screens are typically higher-level components that represent entire pages or views within your application. They often contain multiple components and handle more complex logic related to rendering and managing UI state.
 
-
-
-
-
-<br>
-
-## 💵 Paypal API <img align="center" height="60px" src="https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE-WEBSITE/assets/72359805/1cf2f26b-937f-4eff-950d-a940409e14a9"> -
-
-### Paypal Sandbox test accounts -
-![paypalapi](https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE-WEBSITE/assets/72359805/c4790512-1e54-4b9f-a240-07d336ab2d6b)
-
-
-### 💲Demo Payment via <img height="50px" align="center" src="https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE-WEBSITE/assets/72359805/acfd6955-7866-467e-8e13-d168da6bfc00"> -
-
-To experience the payment process with PayPal, you can use our demo feature. Follow these steps to make a demo payment:
-
-1. **Visit the Demo Payment Page**: Navigate to the payment page.
-2. **Login with Demo Credentials**: Use the provided demo username and password to access the demo environment.
-3. **Initiate Payment**: Enter the demo payment section and select PayPal as the payment method.
-4. **Complete Payment**: Follow the instructions to proceed with the demo payment through PayPal.
-
-### **Demo Credentials <img height="50px" align="center" src="https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE-WEBSITE/assets/72359805/04120fb3-c483-41dc-8710-f4cd74f11771">:**
-- [ ] Username: `sb-gt6zp25024137@personal.example.com`
-- [ ] Password: `W=Flx8z1`
-
-By following these steps, you can simulate a payment transaction using PayPal without the need to create a real order💰. This allows you to experience the payment process and familiarize yourself with its functionality.
 
 
 <br>
