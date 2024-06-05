@@ -1,4 +1,4 @@
-#  MERN E-commerce React Shopping Website 👜🛍️
+#  MERN E-commerce React Shopping Website 👜🛍
 
 [![React](https://img.shields.io/badge/React-★★★★★-blue)](https://react.dev/)
 [![node](https://img.shields.io/badge/node-★★★★★-yellow)]()
@@ -178,7 +178,12 @@ orderRouter.post(
 
 <br>
 
+##### Firebase Authentication:
 ![firebase](https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE/assets/72359805/230b5448-2181-4406-ad86-a6ea80d71d6c)
+
+##### Firebase Firestore DB:
+![firebase - firestore db](https://github.com/shanibider/ANASTACIA-MERN-ECOMMERCE/assets/72359805/9a613763-0769-4ffb-8401-ecf1637f487b)
+
 <br>
 
 4. **Hosting on Render**: ☁️
